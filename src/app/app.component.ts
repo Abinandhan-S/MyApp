@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Myfirstapp';
-  name='Abi';
+  name='Abinandhan';
 
   
 
