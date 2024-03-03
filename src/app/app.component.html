@@ -1,0 +1,56 @@
+<body style="text-align: center;">
+  <h1>Welcome to {{title}}</h1>
+  <br>
+<button class="btn btn-primary" (click)="clkToShowBasic()" (dblclick)="dblclkToHideBasic()">Touch to showBasic</button>
+
+<button class="btn btn-primary" (click)="clkToShowDir()" (dblclick)="dblclkToHideDir()">Touch to showdirective</button>
+<br>
+<div id="showBasic" style="display: none;">
+  <div>
+    <div class="container">
+      <input type="text" [(ngModel)]="name">
+
+      <p>Hi, {{name}} </p>
+    </div>
+    
+  </div>
+  <hr>
+  <app-server></app-server>
+  <app-servers></app-servers>
+  
+  App-server component we can use like attributes like below 
+  <div app-servers></div> 
+
+  App-server component we can use like class name like below 
+  <div class="app-servers"></div>  
+<hr>
+
+<app-warningalert></app-warningalert>
+
+<app-successalert></app-successalert>
+<hr>
+
+<h1>DataBinding</h1>
+<h2>String Interpolation</h2>
+<br>
+<div><app-databinding></app-databinding></div>
+<br>
+
+<h2>Property DataBinding</h2>
+<br>
+<div><app-property-data-binding></app-property-data-binding></div>
+<br>
+</div>
+<br>
+
+
+
+<div id="showdirective" style="display: block;">
+<h2>Directive</h2>
+<br>
+<div class="col-xs-12"><app-directivecomponent></app-directivecomponent></div>
+<br>
+</div> 
+
+
+</body>

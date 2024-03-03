@@ -1,0 +1,39 @@
+<p>property-data-binding!</p>
+
+<br>
+<p style="text-align: justify;">Here we are using property-data-binding, here the button has been default disabled, after the 5 sec its getting enabled, here we are using some function to use property-data-binding, Check with property-data-binding.component.html and property-data-binding.component.ts file</p>
+
+<button class="btn btn-primary" [disabled]="!allowButtonEnabled" (click)="fnClick()" (dblclick)="fnDblClick()">Click Me!</button>
+<br>
+
+<p [innerText]="allowButtonEnabled"></p>
+
+<p>click to get the <b>databinding.component data </b> and Event Binding <b>onMouseOver to change the values in this para message</b> </p>
+<br>
+
+<p id="demo1" (mouseover)="fnDay()">Hi! {{dayStatus}}....Have a {{messageOfDay}}</p>
+<br>
+
+<app-databinding id="demo" style="display: none;"></app-databinding>
+
+<hr>
+<h3 style="color: red;">Passing and Using Data with Event Binding</h3>
+
+<input type="text" class="form-control" style="border: 2px solid red;" (input)="messageToTemplate($event)">
+<br>
+<p style="padding: 5px; border: 3px solid greenyellow; background-color: aqua;">Message For You...{{messageForTemplate}}</p>
+<br>
+
+<p>Two Way data Binding</p>
+<br>
+<input type="text" class="form-control" style="border: 2px solid violet;" [(ngModel)]="messageForTemplate" [(ngModel)]="allowButtonEnabled1">
+
+<button class="btn btn-primary" [disabled]="allowButtonEnabled1 === ''" (click)="fnMsg()" (click)="fnClick1()" (dblclick)="fnDblClick1()">Click Here!</button>
+<br>
+
+<p>Click to get the message</p>
+
+<p id="demo2" style="padding: 5px; border: 3px solid goldenrod; background-color:hotpink;">{{messageInTemplate}}</p>
+<br>
+
+

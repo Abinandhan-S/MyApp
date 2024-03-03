@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+            <p><i>Here we are using ngIf else condition to work get enabled. Refer the <b>directivecomponent.component.html and directivecomponent.component.ts file</b></i></p>
+            <br>
+            <input type="text" class="form-control" [(ngModel)]="directiveMessage1"  placeholder="Enter the Firstname">
+            <input type="text" class="form-control" [(ngModel)]="directiveMessage2" placeholder="Enter the Surname">
+            <br>
+
+            <button type="button" class="btn btn-primary" (click)="directiveCalling()" (dblclick)="resetCalling()" [disabled]="directiveMessage1 === ''">Click</button>
+            <br>
+            <p *ngIf="directiveEnable else noUsername">{{directiveTemplateMessage}}</p>
+            <ng-template #noUsername>
+                <p>There is No name Here! Please Enter the name</p>
+            </ng-template>
+            <hr>
+            
+            <h3>Here we are inserting serveComponent</h3>
+            <br>
+            <p><i> Here we are using ngStyle and ngClass for Some functionality. Refer <b>server.component.html and server.component.ts file</b></i></p>
+            <br>
+            <app-server></app-server>
+            <app-server></app-server>
+            <hr>
+
+            <br>
+            <p><i> Here we are using ngFor for adding server component. Refer <b>directivecomponent.component.html and directivecomponent.component.ts file</b></i></p>
+            <button class="btn btn-primary" (click)="addServer()">AddServer</button>
+            <br>
+            <p><i> Here we are using <b>servers variable(this server varaible declared in directivecomponent.component.ts) array[]</b> to replicate the server.componnet file, tempvar variable is extracting the values in servers array variable so it replicate the server component based on server array variable. Refer <b>directivecomponent.component.html and directivecomponent.component.ts file</b></i></p>
+
+            <br>
+            <app-server *ngFor="let tempvar of servers"></app-server>
+            <br>
+            
+            <button class="btn btn-primary" (click)="clickShow()">Show!</button>
+            <br>
+            <p><i>Index is a way to show which iteration of a loop you're in. "Index" is a reserved expression.</i></p>
+            <p><i>Here numbers are iteration of a loop you're in...</i></p>
+            
+            <br>
+            <p *ngFor="let logitems of log; let i=index"
+            [ngStyle]="{color: i>=5 ? 'violet':'red'}"
+            [ngClass]="{'colortext':i>=5}">Iteration: {{i}}, logitems var: {{logitems}}</p>
+
+           
+        </div>
+    </div>
+</div>
